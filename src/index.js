@@ -9,9 +9,19 @@ fetch(base_url)
     
     let span = document.createElement("span");
     span.textContent = character.name;
-    span.addEventListener('click', () => characterDetails(character));
+    span.addEventListener('click', () => displayCharacterDetails(character));
+    span.style.cursor = "pointer";
     characterBar.appendChild(span);
 }))
 
 .catch(err => console.log(err)
 )
+
+
+function displayCharacterDetails(character) {
+    const detailedInfo = document.getElementById('detailed-info')
+    document.querySelector('#name').textContent = character.name;
+    document.querySelector('#image').src = character.image;
+    document.querySelector('#image').alt = character.name;
+    document.querySelector('#vote-count').textContent = character.votes;
+}
