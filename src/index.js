@@ -1,5 +1,5 @@
 // Your code here
-let base_url = "http://localhost:3000/characters"
+let base_url = "https://bob-s-flatacutties-backend.vercel.app/characters"
 
 document.addEventListener("DOMContentLoaded", () =>{
     fetchCharacters();
@@ -37,8 +37,6 @@ function castingVotes() {
     const form = document.getElementById('votes-form');
     form.addEventListener('submit', addVotes)
 
-    // const button = document.getElementById('reset-btn');
-    // button.addEventListener('click' );
 }
 
 
@@ -49,29 +47,8 @@ function addVotes(event) {
     newVotes = parseInt(currentVotes.textContent, 10);
     inputVotes = parseInt(addedVotes, 10);
     currentVotes.textContent = newVotes + inputVotes;
-
-}
-
-function resetVotes() {
-    
 }
 
 
-// function addSubmitListener(){
-//     let form=document.querySelector('#votes-form')
-//     form.addEventListener('submit',updateVotes)
-// }
 
-// function updateVotes(e){
-//      e.preventDefault()
-//      let input=document.querySelector('#votes')
-//      formVotes=parseInt(input.value,10)
-//      let currentVotes=document.querySelector('#vote-count')
-//      characterVotes=parseInt(currentVotes.textContent,10)
-//     let newVotes=formVotes+characterVotes
-//      currentVotes.textContent=newVotes
-//      if (isNaN(formVotes) || formVotes < 0) {
-//          alert("Please enter a valid number");
-//         return;}
-//      input.value=""
 
